@@ -1,0 +1,144 @@
+<html>
+
+	<head>
+	
+		<script type="text/css">
+			div
+			{
+				border: 10px solid blue;
+				cursor:hand;
+				width:100px;
+				text-align:center;
+			}
+		</script>
+		</script>
+		<script type ="text/JavaScript">
+			function clickme(classname)
+			{
+				alert(classname);
+			}
+		</script>
+	</head>
+	<body>
+		<script language="javascript">
+		/*	var varstring="123"+String("123")+"123";
+			document.writeln(varstring);
+			var varnumber=123+Number("123")+123;
+		 document.writeln(varnumber);
+			var varnumberstring=123+String("123")+123;
+			document.writeln(varnumberstring);
+		*/
+		</script>
+		<div onclick="clickme('谢谢')">输入参数，调用函数</div>
+		<input type="button" value="惦记我" onclick="alert('一帆风顺')">
+		<a onmouseover="alert('一帆风顺')"><img src="a.png" width="140" height="28" border="0"></a>
+		<marquee onmousemove=this.stop() onmouseout=this.start() scrolling="1" scrolldelay="60" direction="up" width="120" height="210">
+			<div><font color="#ff0000"><b>本站公告</b></font></div>
+			<div><font color="#003366"><b>把鼠标放到文字上，文字的向上滚动将停止，移开则在滚动</b></font></div>
+		</marquee>
+		<link rel="stylesheet" type="text/css" href="ext-4.2.1.883/resources/css/ext-all.css">  
+<script type="text/javascript" src="ext-4.2.1.883/ext-all.js" ></script>  
+<script type="text/javascript" src="ext-4.2.1.883/bootstrap.js" ></script> 
+<script type="text/javascript" src="ext-4.2.1.883/ext-lang-zh_CN.js"></script>  
+		
+		<script>
+			
+			Ext.onReady(function() {
+				var data1=[];
+				Ext.QuickTips.init();
+				data1.push({id1:"id",name:"赵云",nickname:"子龙"});
+				data1.push({id1:"id1",name:"赵云1",nickname:"子龙1"});
+				data1.push({id1:"id",name:"赵云",nickname:"子龙"});
+				data1.push({id1:"id3",name:"赵云1",nickname:"子龙1"});
+				data1.push({id1:"id",name:"赵云",nickname:"子龙"});
+				data1.push({id1:"id1",name:"赵云1",nickname:"子龙1"});
+			//	document.write(data1.length);
+				var store1 = new Ext.data.Store({
+				//	proxy: new Ext.data.proxy.Memory(data1),
+					fields:['id1','name' ,'nickname'],
+					data:data1,
+					//reader:new Ext.data.reader.Array(['id1','name' ,'nickname']),//可不写
+					autoLoad:true
+					
+				});
+				
+				var columns = [];
+				columns.push({header:"编号1",dataIndex:"id1",width: 200,sortable : false});
+				columns.push({header:"编号2",dataIndex:"name",width: 200,sortable : false});
+				columns.push({header:"编号3",dataIndex:"nickname",width: 200,sortable : false});
+				columns.push({ menuDisabled: true,
+                sortable: false,
+                xtype: 'actioncolumn',
+                width: 50,header:'操作',items:[
+   
+    {
+ icon:'image/delete.png',tooltip:"下载",handler:function(grid,rindex,cindex){
+    
+     var record=grid.getStore().getAt(rindex);
+     
+     var id=record.get("Name");
+     
+     alert(id+"----beidianji");
+     
+    }}
+   
+   ]});
+				new Ext.grid.Panel({
+					selType:"cellmodel",
+					title:"名将",
+					forceFit: true,
+					width:500,
+					 height: 200,
+					columns:columns,
+					store:store1,
+					renderTo:Ext.getBody()
+				});
+			});
+
+Ext.create('Ext.data.Store', {
+    storeId:'simpsonsStore',
+    fields:['name', 'email', 'phone'],
+    data:{'items':[
+        { 'name': 'Lisa',  "email":"lisa@simpsons.com",  "phone":"555-111-1224"  },
+        { 'name': 'Bart',  "email":"bart@simpsons.com",  "phone":"555-222-1234" },
+        { 'name': 'Homer', "email":"home@simpsons.com",  "phone":"555-222-1244"  },
+        { 'name': 'Marge', "email":"marge@simpsons.com", "phone":"555-222-1254"  }
+    ]},
+    proxy: {
+        type: 'memory',
+        reader: {
+            type: 'json',
+            root: 'items'
+        }
+    }
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Simpsons',
+    store: Ext.data.StoreManager.lookup('simpsonsStore'),
+    columns: [
+        { header: 'Name',  dataIndex: 'name' },
+        { header: 'Email', dataIndex: 'email', flex: 1 },
+        { header: 'Phone', dataIndex: 'phone' },
+        {xtype:"actioncolumn",header:'操作',items:[
+   
+    {icon:'image/delete.png',tooltip:'下载',handler:function(grid,rindex,cindex){
+    
+     var record=grid.getStore().getAt(rindex);
+     
+     var id=record.get("name");
+     
+     alert(id+"----beidianji");
+     
+    }}
+   
+   ]}
+    ],
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+		</script>
+
+	</body>
+</html>
