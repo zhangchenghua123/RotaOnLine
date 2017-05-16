@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+.container{
+	position:relative;
+	margin:20px auto;
+	height:400px;
+	width:600px;
+	z-index:1
+	}
+.opacity{
+	position: absolute;
+	top:0;
+	left:0;
+	height:400px;
+	width:600px;
+	filter:alpha(Opacity=60);
+	-moz-opacity:0.6;
+	opacity:0.6;
+	z-index:10;
+	background-color:black;
+}
+
+	body {
+	height: auto;
+	width: auto;
+	background: url(../image/index_bg.jpg) repeat-x;
+	background-size:100% 100%;
+	background-attachment: scroll;
+	}

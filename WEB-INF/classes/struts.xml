@@ -9,9 +9,6 @@
 
     <package name="default" extends="struts-default">
      
-       <action name="first">
-       <result>/student/studentLogin.jsp</result>
-       </action>
      
 
     </package>

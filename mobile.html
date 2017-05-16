@@ -7,8 +7,11 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <title>Insert title here</title>
+
 </head>
 <body>
+
+范德萨
 	<div data-role="page" date-title="第一页" id="first">
 		<div data-role="header">
 			<h1>第一页</h1>
@@ -16,6 +19,16 @@
 		<div data-role="content" id="content">
 			<a href="#second">按我到第二页</a>
 		</div>
+		<table border="1" cellspacing="4" cellpadding="10">
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		<tr><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td><td>d</td></tr>
+		</Table>
 		<div data-role="footer">
 			<h4>页脚</h4>
 		</div>
@@ -31,5 +44,17 @@
 			<h4>页脚</h4>
 		</div>
 	</div>
+	
+	<script>
+function change(tdtd){
+tdtd.innerText="a";
+tdtd.style.backgroundColor="red";
+}
+var tds=document.getElementsByTagName("td");
+for(var j=0;j<tds.length;j++){
+tds[j].onclick=function(){change(this)};
+}
+</script>
 </body>
+
 </html>
